@@ -40,7 +40,7 @@
             color: white;
             border: 1px solid black;
             border-radius: 15px;
-            padding: 3px 11px;
+            padding: 2px 10px;
             text-decoration:none;
         }
     </style>
