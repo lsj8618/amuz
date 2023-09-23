@@ -47,7 +47,7 @@
 </head>
 <body>
     <h1>게시판</h1>
-    <a id='createBtn' href="{{route('create')}}">글작성</a>
+    <a id='createBtn' href="{{ route('create') }}">글작성</a>
     <table>
         <tr>
             <th>글 번호</th>
