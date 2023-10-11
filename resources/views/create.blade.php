@@ -55,13 +55,13 @@
         <input type="text" id="title" name="title" required>
 
         <label for="author">작성자:</label>
-        <input type="text" id="author" name="author" required>
+        <input type="text" id="author" name="user_name" required>
 
         <label for="author">비밀번호:</label>
-        <input type="text" id="author" name="author" required>
+        <input type="password" id="author" name="password" required>
 
         <label for="content">내용:</label>
-        <textarea id="content" name="content" rows="5" required></textarea>
+        <textarea id="description" name="description" rows="5" required></textarea>
 
         <input type="submit" value="글 작성">
     </form>

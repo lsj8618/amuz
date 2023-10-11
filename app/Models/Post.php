@@ -10,6 +10,7 @@ class Post extends Model
     protected $attributes = [
         'title' => 'string',
         'description' => 'string',
-        'user_name' => 'string'
+        'user_name' => 'string',
+        'password' => 'string',
     ];
 }

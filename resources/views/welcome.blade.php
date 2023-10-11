@@ -46,6 +46,7 @@
     </style>
 </head>
 <body>
+    {{$board[0]->title}}
     <h1>게시판</h1>
     <a id='createBtn' href="{{ route('create') }}">글작성</a>
     <table>
@@ -56,12 +57,15 @@
             <th>작성 시간</th>
         </tr>
         <!-- 예시 게시물 -->
+        @foreach ($boards as $board)
+            <p>This is board {{ $board->id }}</p>
         <tr>
-            <td>1</td>
-            <td><a href="post1.html" style="text-decoration: none; color: #0078d4;">게시물 제목 1</a></td>
-            <td>사용자1</td>
-            <td>2023-09-18 14:30:00</td>
+            <td>{{$board[0]->id}}1</td>
+            <td><a href="post1.html" style="text-decoration: none; color: #0078d4;">{{$board[0]->title}}</a></td>
+            <td>{{$board[0]->user_name}}</td>
+            <td>{{$board[0]->created_at}}</td>
         </tr>
+        @endforeach
         <!-- 더 많은 게시물 추가 -->
     </table>
 </body>
