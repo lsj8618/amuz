@@ -46,10 +46,29 @@
             padding: 2px 10px;
             text-decoration:none;
         }
+        .login-signup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .login-signup button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 2px 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <h1>게시판</h1>
+    <div class="login-signup">
+        <button onclick="location.href='{{route('login')}}'">Login</button>
+        <button onclick="location.href='{{route('register')}}'">Register</button>
+    </div>
     <a id='createBtn' href="{{ route('create') }}">글작성</a>
     <div>
         <table>
@@ -74,6 +93,6 @@
         </table>
     </div>
     
-    {{ $boards->links() }}
+    <div style=" width:1000px; height:350px; display:flex; flex-direction:row; margin:auto;" > {{ $boards->links() }}</div>
 </body>
 </html>

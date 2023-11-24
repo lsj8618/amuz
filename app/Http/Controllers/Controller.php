@@ -12,14 +12,9 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    function Index(Request $request)
-    {
-        // boards -> board로 foreach 돌리기 떄문에 boards로 할당
-        $boards = DB::table('post')->get();
-        return view('welcome', compact('boards'));
-    }
+ 
 
-    function Create(Request $request)
+    function write(Request $request)
     {
 //        Post::all()
         return view('create', []);
