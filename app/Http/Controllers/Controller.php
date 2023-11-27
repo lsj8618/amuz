@@ -56,7 +56,7 @@ class Controller extends BaseController
         return redirect("/");
     }
     function showPosts(Request $request) {
-        $boards = DB::table('post')->paginate(6);
+        $boards = DB::table('post')->paginate(5);
         return view('welcome', compact(['boards'])); 
     }
 }

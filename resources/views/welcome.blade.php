@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 20px;
-        }
-        h1 {
-            color: #007bff;
-            padding: 10px;
-            border-radius: 5px;
+            margin: 65px;
         }
         table {
             width: 80%;
@@ -41,33 +37,46 @@
             position: relative;
             background-color: #007bff;
             color: white;
-            border: 1px solid #007bff;
+            border: 1px solid black;
             border-radius: 15px;
             padding: 2px 10px;
             text-decoration:none;
         }
         .login-signup {
+            left: 81%;
             position: absolute;
-            top: 10px;
+            top: 15px;
             right: 10px;
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
-        .login-signup button {
-            background-color: #007bff;
+        .login-signup a {
+            background-color: transparent;
+            color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 20px;
+            padding: 3px 10px;
+            text-decoration: none;
+        }
+        .login-signup a:hover {
+            background-color: silver;
             color: white;
-            border: none;
-            border-radius: 15px;
-            padding: 2px 10px;
-            cursor: pointer;
+        }
+        .custom-pagination {
+            width: 1000px;
+            height: 350px;
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+            justify-content: center;
         }
     </style>
 </head>
 <body>
-    <h1>게시판</h1>
+    <h1 class="p-5 text-slate-400 text-3xl">게시판</h1>
     <div class="login-signup">
-        <button onclick="location.href='{{route('login')}}'">Login</button>
-        <button onclick="location.href='{{route('register')}}'">Register</button>
+        <a href="{{route('login')}}">Login</a>
+        <a href="{{route('register')}}">Register</a>
     </div>
     <a id='createBtn' href="{{ route('create') }}">글작성</a>
     <div>
@@ -93,6 +102,9 @@
         </table>
     </div>
     
-    <div style=" width:1000px; height:350px; display:flex; flex-direction:row; margin:auto;" > {{ $boards->links() }}</div>
+    <div class="custom-pagination">
+        {{ $boards->links() }}
+    </div>
+    
 </body>
 </html>
